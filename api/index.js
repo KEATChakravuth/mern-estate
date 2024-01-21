@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json } from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.route.js";
@@ -15,6 +15,7 @@ mongoose
   });
 
 const app = express();
+app.use(json());
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000!");
